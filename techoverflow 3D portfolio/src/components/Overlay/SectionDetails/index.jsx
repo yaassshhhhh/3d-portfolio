@@ -33,13 +33,19 @@ const SectionDetails = () => {
 
   // Instructions click handler
   const clickHandler = () => {
-    cameraMovementSheet.sequence.play({
-      range: [
-        cameraMovementSheet.sequence.position,
-        stops.find((stop) => stop > cameraMovementSheet.sequence.position),
-      ],
-      rate: 0.3,
-    });
+    const nextStop = stops.find((stop) => stop > cameraMovementSheet.sequence.position);
+
+    if (nextStop) {
+      cameraMovementSheet.sequence.play({
+        range: [cameraMovementSheet.sequence.position, nextStop],
+        rate: 0.3,
+      });
+    } else {
+      cameraMovementSheet.sequence.play({
+        range: [0, 2.1],
+        rate: 0.3,
+      });
+    }
   };
 
   // Theatre.js
@@ -114,7 +120,7 @@ const SectionDetails = () => {
                     onMouseLeave={() => updateCursorType("pointer")}
                     target="_blank"
                     className="section-btn"
-                    href="https://t.me/tech_overflow"
+                    href="https://github.com/yaassshhhhh/3d-portfolio.git"
                   >
                     github repo <HiOutlineArrowRight />
                   </a>

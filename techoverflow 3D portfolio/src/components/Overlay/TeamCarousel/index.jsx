@@ -25,7 +25,7 @@ const TeamCarousel = () => {
 
   return (
     <motion.div className="carousel-wrapper">
-      <TeamCarouselItem key={`member-${active}`} member={teamData[active]} />
+      <TeamCarouselItem key={`member-${active}`} member={teamData[active % teamData.length]} />
     </motion.div>
   );
 };

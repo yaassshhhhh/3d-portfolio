@@ -2,6 +2,11 @@
 
 * {
   cursor: none;
+  --neon-blue: #00f3ff;
+  --neon-purple: #bd00ff;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --blur-amt: 10px;
 }
 
 *,

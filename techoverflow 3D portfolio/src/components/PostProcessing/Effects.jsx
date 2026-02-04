@@ -1,5 +1,5 @@
 import { useLoader, useThree } from "@react-three/fiber";
-import { EffectComposer, LUT, Vignette } from "@react-three/postprocessing";
+import { EffectComposer, LUT, Vignette, Bloom, ChromaticAberration, Noise } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader";
 
@@ -29,6 +29,9 @@ export function Effects() {
             darkness={0.85}
             blendFunction={BlendFunction.NORMAL}
           />
+          <Bloom luminanceThreshold={1} mipmapBlur intensity={1.5} />
+          <ChromaticAberration offset={[0.0005, 0.0005]} />
+          <Noise opacity={0.02} />
         </EffectComposer>
       </>
     )

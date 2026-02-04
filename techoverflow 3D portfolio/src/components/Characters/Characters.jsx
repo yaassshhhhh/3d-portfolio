@@ -50,14 +50,7 @@ const Characters = () => {
         rotation={[1.6, 0, 0]}
         actionName="SittingRelaxed"
       />
-      {/* Character 4 / Jane */}
-      <Character
-        path="./models/characters/character_04-v1-transformed.glb"
-        scale={1.2}
-        position={[-12, -1.03, 22]}
-        rotation={[1.6, 0, 0.75]}
-        actionName="SittingTalking"
-      />
+
       {/* Character 5 / Zoran */}
       <Character
         path="./models/characters/character_05-v1-transformed.glb"

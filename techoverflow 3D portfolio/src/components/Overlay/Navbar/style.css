@@ -11,13 +11,24 @@ header {
   left: 0;
   width: 100%;
   margin: 2rem 0 0 0;
+  z-index: 100;
+  /* Ensure it stays on top */
 }
 
 nav {
   position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-amt));
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav > ul {
+nav>ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -27,17 +38,12 @@ nav > ul {
 .navigation {
   display: flex;
   flex-direction: row;
-  justify-content: end;
-  column-gap: 5rem;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .navigation-dialogue {
   display: none;
-}
-
-.navigation > ul {
-  flex-direction: row;
-  column-gap: 2rem;
 }
 
 button {
@@ -45,26 +51,37 @@ button {
   font-family: "Inter", sans-serif;
   text-transform: capitalize;
   letter-spacing: 1.6px;
-  font-size: 1.35rem;
-
-  color: rgb(120, 120, 120);
+  font-size: 1.1rem;
+  color: #fff;
+  opacity: 0.7;
   background: none;
   border: none;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
+button:hover,
 button.active {
-  color: rgb(164, 164, 164);
+  color: var(--neon-blue);
+  opacity: 1;
+  text-shadow: 0 0 10px var(--neon-blue);
 }
 
 .sound_control {
   position: relative;
 }
 
-.sound_control > svg {
+.sound_control>svg {
   display: block;
   height: 1.7rem;
   width: 1.7rem;
   stroke: rgb(164, 164, 164);
+  transition: all 0.3s ease;
+}
+
+.sound_control:hover>svg {
+  stroke: var(--neon-purple);
+  filter: drop-shadow(0 0 5px var(--neon-purple));
 }
 
 .no-sound.sound_control::after {
@@ -76,12 +93,13 @@ button.active {
   display: block;
   height: 3px;
   width: 110%;
-  background: rgb(164, 164, 164);
+  background: var(--neon-purple);
+  box-shadow: 0 0 5px var(--neon-purple);
 }
 
 /* For screens less than 700px */
 @media only screen and (max-width: 700px) {
-  .navigation > ul {
+  .navigation>ul {
     display: none;
   }
 }

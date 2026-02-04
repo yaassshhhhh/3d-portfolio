@@ -67,7 +67,7 @@ const Navbar = () => {
       <div className="container">
         <nav className="navigation">
           {/* Sections navigation */}
-          <ul>
+          <ul className="nav-list">
             {navList.map((navItem, index) => (
               <li key={`${index}-navLink`}>
                 <button
@@ -85,7 +85,7 @@ const Navbar = () => {
           </ul>
 
           {/* Theme toggler & Sound Level Control */}
-          <ul>
+          <ul className="control-list">
             {/* <li>
               <button aria-label="theme toggler">
                 <HiOutlineSun />
